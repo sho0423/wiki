@@ -61,6 +61,7 @@ export default class SNSLogin extends Component {
         <hr />
         <p><a href='/users'>→友達を追加する</a></p>
         <p><a href='/login'>→別のユーザーでログイン</a></p>
+        <p><a href='/'>→FrontPageへ</a></p>
       </div>
     )
   }
