@@ -31,6 +31,7 @@ class WikiShow extends React.Component {
     const html = this.convertText(body)
     return(
       <div>
+        <p>{window.localStorage.sns_id}でログインしています</p>
         <p><a href='/login'>ログイン</a></p>
         <h1>{this.state.name}</h1>
         <div style={styles.show}>{html}</div>
