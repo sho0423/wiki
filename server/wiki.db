@@ -1,5 +1,2 @@
-{"name":"FrontPage","body":"*誰でも編集できるWiki\n\n- 編集は、ページ下の編集リンクをクリック!\n- WIKI記法で記述できる!\n\n本書では、Reactを利用して、オリジナルのWIKIを開発します。\n\n> 楽しく学べる、実践的なサンプル付きの解説書。\n\n@本書の特徴\n","writer":"sho","_id":"N8RuBaBEIgf37lWA"}
-{"name":"本書の特徴","body":"* 本書の特徴\n\n> なんか\n\n- a\n- b\n- c\n\n@FrontPage\n@honsyo\n","_id":"kdvbLaAEUEWLneyg"}
-{"name":"honsyo","body":"","_id":"yFduynJIAvCG4oMD"}
-{"name":"FrontPage","body":"*誰でも編集できるWiki\n\n- 編集は、ページ下の編集リンクをクリック!\n- WIKI記法で記述できる!\n\n本書では、Reactを利用して、オリジナルのWIKIを開発します。\n\n> 楽しく学べる、実践的なサンプル付きの解説書。\n\n@本書の特徴\n","writer":"sho","_id":"N8RuBaBEIgf37lWA"}
-{"name":"FrontPage","body":"*誰でも編集できるWiki\n\n- 編集は、ページ下の編集リンクをクリック!\n- WIKI記法で記述できる!\n\n本書では、Reactを利用して、オリジナルのWIKIを開発します。\n\n> 楽しく学べる、実践的なサンプル付きの解説書。\n\n@本書の特徴\n","writer":"test","_id":"N8RuBaBEIgf37lWA"}
+{"name":"FrontPage","body":"*ログインすることで編集、タイムライン表示が可能です\n\n-マークダウン 形式で記事を書くことができます\n-まずはログインしてみてください。\n-id: test, pass: test\n-id: test2, pass: test2\n-と二つのユーザーを登録してあります。\n\n>引用も可能です\n\n行間を１行以上開けることで段落として認識されます。\n\n@sample\n\nこのようにするとリンクを貼れます。新しく記事を作る時は既存のページからリンクを伸ばして飛んでから編集してください。最後にリンクを貼る際には最後しっかりと改行してください。でないと読み取られません。\n\n>このように\n\n@これは末尾に改行がない","writer":"test2","_id":"6NxWM8I4TtBlAYVb"}
+{"name":"sample","body":"*ログイン後のリダイレクトにて\n\nuser.pngへのリンクがおかしく、アイコンが表示されないですがリロードするとうまくいきます。チャットに関してもリアルタイムに反映されます。Reactの利点です。\n\n@FrontPage\n","writer":"test","_id":"ZbmlPxOxirQedqad"}
