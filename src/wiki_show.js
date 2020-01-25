@@ -9,7 +9,7 @@ class WikiShow extends React.Component {
     super(props) 
     const {params} = this.props.match
     this.state = {
-      name: params.name, body: '', loaded: false}
+      name: params.name, body: '', writer: '', loaded: false}
   }
   //Wikiの内容を読み込む
   componentWillMount () {
@@ -19,9 +19,14 @@ class WikiShow extends React.Component {
         if (err) return
         this.setState({
           body: res.body.data.body,
+          writer: res.writer,
           loaded: true
         })
       })
+  }
+  handleClick() {
+    window.localStorage.clear()
+    window.location.reload() // ホントはやっちゃダメ(Redux使えば良い)
   }
   // 画面の表示処理
   render () {
@@ -29,16 +34,34 @@ class WikiShow extends React.Component {
     const name = this.state.name
     const body = this.state.body
     const html = this.convertText(body)
-    return(
-      <div>
-        <p>{window.localStorage.sns_id}でログインしています</p>
+    const userid = window.localStorage.sns_id
+    const in_out_state = (userid)
+      ? (
+        <div>
+          <p>{userid}でログインしています</p>
+          <p style={styles.right}>
+            <button onClick={this.handleClick}>ログアウト</button>
+          </p>
+      </div>
+      )
+      : (
         <p><a href='/login'>ログイン</a></p>
-        <h1>{this.state.name}</h1>
-        <div style={styles.show}>{html}</div>
+      )
+    const edit_timeline = (userid)
+      ? (
         <p style={styles.right}>
           <p><a href={`/edit/${name}`}>→このページを編集</a></p>
           <p><a href={`/timeline`}>→タイムラインへ</a></p>
         </p>
+      )
+      : null
+    return(
+      <div>
+        {in_out_state}
+        <h4>最終編集者: {this.state.writer} </h4>
+        <h1>{this.state.name}</h1>
+        <div style={styles.show}>{html}</div>
+        {edit_timeline}
       </div>
     )
   }

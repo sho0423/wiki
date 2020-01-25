@@ -11,10 +11,10 @@ export default class WikiEdit extends Component {
     const {params} = this.props.match
     const name = params.name
     this.state = {
-      name, body: '', loaded: false, jump: ''
+      name, body: '', writer: '', loaded: false, jump: ''
     }
   }
-  //Wikiの内容を読み込む
+  // Wikiの内容を読み込む,編集用なので最終編集者はいらない
   componentWillMount () {
     request
       .get(`/api/get/${this.state.name}`)
@@ -33,6 +33,7 @@ export default class WikiEdit extends Component {
       .post('/api/put/' + wikiname)
       .type('form')
       .send({
+        writer: window.localStorage.sns_id,
         name: wikiname,
         body: this.state.body
       })
