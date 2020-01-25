@@ -19,7 +19,7 @@ class WikiShow extends React.Component {
         if (err) return
         this.setState({
           body: res.body.data.body,
-          writer: res.writer,
+          writer: res.body.data.writer,
           loaded: true
         })
       })
