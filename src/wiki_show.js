@@ -35,7 +35,8 @@ class WikiShow extends React.Component {
         <h1>{this.state.name}</h1>
         <div style={styles.show}>{html}</div>
         <p style={styles.right}>
-          <a href={`/edit/${name}`}>→このページを編集</a>
+          <p><a href={`/edit/${name}`}>→このページを編集</a></p>
+          <p><a href={`/timeline`}>→タイムラインへ</a></p>
         </p>
       </div>
     )
