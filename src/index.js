@@ -9,9 +9,8 @@ import SNSTimeline from './timeline'
 import SNSLogin from './login'
 import WikiEdit from './wiki_edit'
 import WikiShow from './wiki_show'
-import ButtonAppBar from './header'
+import Header from './header'
 
-const header = ButtonAppBar()
 
 const WikiApp = () => (
 
@@ -30,7 +29,10 @@ const WikiApp = () => (
 
 //DOMにメインコンポーネントを書き込む
 ReactDOM.render(
-  <header />,
+  <Header />,
+  document.getElementById('header')
+)
+ReactDOM.render(
   <WikiApp />,
   document.getElementById('root')
 )
