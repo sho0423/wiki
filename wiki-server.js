@@ -137,7 +137,7 @@ app.get('/api/get/:wikiname', (req,res) => {
       return
     }
     if (docs.length === 0) {
-      docs = [{name: wikiname, body: ''}]
+      docs = [{name: wikiname, body: '', writer:''}]
     }
     res.json({status: true, data: docs[0]})
   })
@@ -146,7 +146,7 @@ app.get('/api/get/:wikiname', (req,res) => {
 //Wikiデータを書き込むAPI
 app.post('/api/put/:wikiname', (req, res) => {
   const wikiname = req.params.wikiname
-  console.log('/api/put/' + wikiname, req.body)
+  console.log('/api/put/' + wikiname, req.body) // req.bodyは改行ごとの分の足し算
   //既存のエントリがあるか確認
   db.wikiDB.find({'name': wikiname}, (err, docs) => {
     if (err) {
@@ -154,10 +154,12 @@ app.post('/api/put/:wikiname', (req, res) => {
       return
     }
     const body = req.body.body
+    const writer = req.body.writer
+    console.log(writer)
     if (docs.length === 0) { //エントリーがなければ
-      db.wikiDB.insert({name:wikiname, body})
+      db.wikiDB.insert({name:wikiname, body, writer})
     } else { //既存のエントリを更新
-      db.wikiDB.update({name: wikiname}, {name: wikiname,body})
+      db.wikiDB.update({name: wikiname}, {name: wikiname,body,writer})
     }
     res.json({status: true})
   })

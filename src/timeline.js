@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import request from 'superagent'
 import styles from './styles'
 
-// ログイン画面を定義したコンポーネント
-export default class SNSLogin extends Component {
+// タイムライン画面を定義したコンポーネント
+export default class SNSTimeline extends Component {
   constructor (props) {
     super(props)
     this.state = { timelines: [], comment: '' }
@@ -51,6 +51,7 @@ export default class SNSLogin extends Component {
     })
     return (
       <div>
+        <p>{window.localStorage.sns_id}でログインしています。</p>
         <h1>タイムライン</h1>
         <div>
           <input value={this.state.comment} size={40}
